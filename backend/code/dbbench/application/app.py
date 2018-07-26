@@ -9,3 +9,4 @@ class DbbenchConfigurator(Configurator):
         self.add_plugin(SettingsPlugin('dbbench.application.settings'))
         self.add_plugin(LoggingPlugin())
         self.add_plugin(DatabasePlugin('psql'))
+        self.add_plugin(DatabasePlugin('mariadb'))

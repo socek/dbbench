@@ -18,8 +18,14 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  mariadb:
+    image: mariadb:10.3.8-bionic
+    env_file: .env
+    volumes:
+      - mariadb-data:/var/lib/mysql
   redis:
     image: redis:3.2.11
 
 volumes:
   postgres-data:
+  mariadb-data:

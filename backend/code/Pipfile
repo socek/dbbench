@@ -15,6 +15,7 @@ redis = "*"
 bcrypt = "*"
 webtest = "*"
 alembic = "*"
+mysqlclient = "*"
 
 [dev-packages]
 

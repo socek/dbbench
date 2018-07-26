@@ -59,8 +59,10 @@ def logging(settings):
 
 
 def database(settings):
-    settings['db:psql:url'] = environ['BACKEND_DB_URL']
-    settings['db:psql:default_url'] = environ['BACKEND_DB_DEFAULT_URL']
+    settings['db:psql:url'] = environ['BACKEND_PSQL_URL']
+    settings['db:psql:default_url'] = environ['BACKEND_PSQL_URL']
+    settings['db:mariadb:url'] = environ['BACKEND_MARIADB_URL']
+    settings['db:mariadb:default_url'] = environ['BACKEND_MARIADB_URL']
 
 
 def redis(settings):
