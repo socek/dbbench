@@ -5,8 +5,12 @@ services:
     image: backend
     build: backend
     env_file: .env
+    tty: true
     volumes:
       - ./backend/code:/code
+    depends_on:
+      - postgres
+      - redis
 
   postgres:
     image: postgres:10.1

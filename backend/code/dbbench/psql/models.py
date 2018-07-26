@@ -5,6 +5,7 @@ from uuid import uuid4
 from sqlalchemy import Boolean
 from sqlalchemy import Column
 from sqlalchemy import DateTime
+from sqlalchemy import String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.schema import MetaData
@@ -39,3 +40,9 @@ class Base(object):
 
 
 Model = declarative_base(metadata=metadata, cls=Base)
+
+
+class First(Model):
+    __tablename__ = 'first'
+
+    name = Column(String, nullable=True)
