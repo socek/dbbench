@@ -1,8 +1,8 @@
 from dbbench.base.command import BaseCommand
-from dbbench.psql.models import First
+from dbbench.sql.models import First
 
 
-class PostgresqlCommand(BaseCommand):
+class SqlCommand(BaseCommand):
     @property
     def add(self):
         return self.connection.add

@@ -8,7 +8,7 @@ def default():
         'paths': PrefixedStringsDict('/code/'),
     }
     logging(settings)
-    database(settings)
+    sql_database(settings)
     redis(settings)
     return settings
 
@@ -58,11 +58,15 @@ def logging(settings):
     }
 
 
-def database(settings):
+def sql_database(settings):
     settings['db:psql:url'] = environ['BACKEND_PSQL_URL']
     settings['db:psql:default_url'] = environ['BACKEND_PSQL_URL']
     settings['db:mariadb:url'] = environ['BACKEND_MARIADB_URL']
     settings['db:mariadb:default_url'] = environ['BACKEND_MARIADB_URL']
+    settings['db:sqlite:url'] = 'sqlite:////tmp/sqlite.db'
+    settings['db:sqlite:default_url'] = 'sqlite://'
+    settings['db:sqlite_memory:url'] = 'sqlite://'
+    settings['db:sqlite_memory:default_url'] = 'sqlite://'
 
 
 def redis(settings):

@@ -10,3 +10,5 @@ class DbbenchConfigurator(Configurator):
         self.add_plugin(LoggingPlugin())
         self.add_plugin(DatabasePlugin('psql'))
         self.add_plugin(DatabasePlugin('mariadb'))
+        self.add_plugin(DatabasePlugin('sqlite'))
+        self.add_plugin(DatabasePlugin('sqlite_memory'))

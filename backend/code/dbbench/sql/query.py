@@ -1,8 +1,8 @@
 from dbbench.base.query import BaseQuery
-from dbbench.psql.models import First
+from dbbench.sql.models import First
 
 
-class PostgresqlQuery(BaseQuery):
+class SqlQuery(BaseQuery):
     @property
     def query(self):
         return self.connection.query
