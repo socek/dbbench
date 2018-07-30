@@ -19,11 +19,6 @@ class BaseSqlFixture(BaseFixture):
         request.addfinalizer(finalizer)
 
     @fixture
-    def app(self, config):
-        with config as app:
-            yield app
-
-    @fixture
     def connection(self, app):
         _conn = getattr(app, self.CONNECTION_NAME)
         if metadata.bind != _conn.bind:

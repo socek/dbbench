@@ -23,6 +23,11 @@ class BaseFixture(BaseIntegrationFixture):
         return self.DATA[obj_name][index]
 
     @fixture
+    def app(self, config):
+        with config as app:
+            yield app
+
+    @fixture
     def connection(self):
         raise RuntimeError('create connection')
 

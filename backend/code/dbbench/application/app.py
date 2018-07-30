@@ -3,6 +3,8 @@ from sapp.configurator import Configurator
 from sapp.plugins.settings import SettingsPlugin
 from sapp.plugins.sqlalchemy.plugin import DatabasePlugin
 
+from dbbench.mongo.plugin import MongoDbPlugin
+
 
 class DbbenchConfigurator(Configurator):
     def append_plugins(self):
@@ -12,3 +14,4 @@ class DbbenchConfigurator(Configurator):
         self.add_plugin(DatabasePlugin('mariadb'))
         self.add_plugin(DatabasePlugin('sqlite'))
         self.add_plugin(DatabasePlugin('sqlite_memory'))
+        self.add_plugin(MongoDbPlugin('mongo'))

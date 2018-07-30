@@ -9,6 +9,7 @@ def default():
     }
     logging(settings)
     sql_database(settings)
+    mongo_database(settings)
     redis(settings)
     return settings
 
@@ -73,3 +74,8 @@ def redis(settings):
     settings['redis:host'] = 'redis'
     settings['redis:port'] = 6379
     settings['redis:db'] = 0
+
+
+def mongo_database(settings):
+    settings['mongo:url'] = environ['BACKEND_MONGO_URL']
+    settings['mongo:db'] = environ['BACKEND_MONGO_DB']

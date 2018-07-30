@@ -16,6 +16,7 @@ bcrypt = "*"
 webtest = "*"
 alembic = "*"
 mysqlclient = "*"
+pymongo = "*"
 
 [dev-packages]
 

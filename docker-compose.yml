@@ -10,7 +10,8 @@ services:
       - ./backend/code:/code
     depends_on:
       - postgres
-      - redis
+      - mariadb
+      - mongo
 
   postgres:
     image: postgres:10.1
@@ -23,9 +24,14 @@ services:
     env_file: .env
     volumes:
       - mariadb-data:/var/lib/mysql
-  redis:
-    image: redis:3.2.11
+
+  mongo:
+    image: mongo:3.2.20-jessie
+    env_file: .env
+    volumes:
+      - mongo-data:/data/db
 
 volumes:
   postgres-data:
   mariadb-data:
+  mongo-data:
