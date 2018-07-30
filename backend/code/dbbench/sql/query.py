@@ -1,5 +1,6 @@
 from dbbench.base.query import BaseQuery
 from dbbench.sql.models import First
+from dbbench.sql.models import FirstDM
 
 
 class SqlQuery(BaseQuery):
@@ -8,4 +9,4 @@ class SqlQuery(BaseQuery):
         return self.connection.query
 
     def get_by_id(self, id):
-        return self.query(First).filter(First.id == id).one()
+        return First(self.query(FirstDM).filter(FirstDM.id == id).one())

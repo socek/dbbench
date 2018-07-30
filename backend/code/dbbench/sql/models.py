@@ -8,6 +8,8 @@ from sqlalchemy import String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.schema import MetaData
 
+from dbbench.base.models import First as BaseFirst
+
 metadata = MetaData()
 
 
@@ -28,7 +30,13 @@ class Base(object):
 Model = declarative_base(metadata=metadata, cls=Base)
 
 
-class First(Model):
+class FirstDM(Model):
     __tablename__ = 'first'
 
     name = Column(String(100), nullable=True)
+
+
+class First(BaseFirst):
+    def __init__(self, obj):
+        self.id = obj.id
+        self.name = obj.name

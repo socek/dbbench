@@ -1,5 +1,5 @@
 from dbbench.base.command import BaseCommand
-from dbbench.sql.models import First
+from dbbench.sql.models import FirstDM
 
 
 class SqlCommand(BaseCommand):
@@ -12,7 +12,7 @@ class SqlCommand(BaseCommand):
         return self.connection.commit
 
     def _create(self, name):
-        obj = First()
+        obj = FirstDM()
         obj.name = name
 
         self.add(obj)
